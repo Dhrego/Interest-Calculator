@@ -1,4 +1,4 @@
-import "../../index.css";
+import styles from "../Table/Table.module.css";
 const Table = (props) => {
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -8,7 +8,7 @@ const Table = (props) => {
   });
 
   return (
-    <table className="result">
+    <table className={styles.result}>
       <thead>
         <tr>
           <th>Year</th>

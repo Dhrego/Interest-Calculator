@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "../FormInput/FormInput.module.css";
 
 const FormInput = (props) => {
   const defaultInput = {
@@ -20,13 +21,13 @@ const FormInput = (props) => {
 
   const inputHandler = (input, value) => {
     setUserInput((prevInput) => {
-      return { ...prevInput, [input]: value };
+      return { ...prevInput, [input]: +value };
     });
   };
 
   return (
-    <form className="form" onSubmit={submitHandler}>
-      <div className="input-group">
+    <form className={styles.form} onSubmit={submitHandler}>
+      <div className={styles["input-group"]}>
         <p>
           <label htmlFor="current-savings">Current Savings ($)</label>
           <input
@@ -48,7 +49,7 @@ const FormInput = (props) => {
           />
         </p>
       </div>
-      <div className="input-group">
+      <div className={styles["input-group"]}>
         <p>
           <label htmlFor="expected-return">
             Expected Interest (%, per year)
@@ -70,11 +71,15 @@ const FormInput = (props) => {
           />
         </p>
       </div>
-      <p className="actions">
-        <button type="reset" onClick={resetHandler} className="buttonAlt">
+      <p className={styles.actions}>
+        <button
+          type="reset"
+          onClick={resetHandler}
+          className={styles.buttonAlt}
+        >
           Reset
         </button>
-        <button type="submit" className="button">
+        <button type="submit" className={styles.button}>
           Calculate
         </button>
       </p>

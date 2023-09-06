@@ -43,7 +43,9 @@ function App() {
           initial_investment={userInput["current-savings"]}
         />
       )}
-      {!userInput && <p>No investments calculated yet</p>}
+      {!userInput && (
+        <p style={{ textAlign: "center" }}>No investments calculated yet</p>
+      )}
     </div>
   );
 }
