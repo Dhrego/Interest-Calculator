@@ -11,7 +11,7 @@ const FormInput = (props) => {
   const [userInput, setUserInput] = useState(defaultInput);
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("popoppo");
+    props.onCalculate(userInput);
   };
 
   const resetHandler = () => {
