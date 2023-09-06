@@ -1,4 +1,4 @@
-const FormInput = () => {
+const FormInput = (props) => {
   return (
     <form className="form">
       <div className="input-group">
@@ -27,7 +27,7 @@ const FormInput = () => {
         <button type="reset" className="buttonAlt">
           Reset
         </button>
-        <button type="submit" className="button">
+        <button onClick={props.onSubmit} type="submit" className="button">
           Calculate
         </button>
       </p>

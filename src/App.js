@@ -1,9 +1,11 @@
-import FormInput from "./components/FormInput";
-import Header from "./components/Header";
-import Table from "./components/Table";
+import FormInput from "./components/FormInput/FormInput";
+import Header from "./components/Header/Header";
+import Table from "./components/Table/Table";
 
 function App() {
   const calculateHandler = (userInput) => {
+    console.log("clicked");
+
     // Should be triggered when form is submitted
     // You might not directly want to bind it to the submit event on the form though...
 
@@ -33,7 +35,7 @@ function App() {
   return (
     <div>
       <Header />
-      <FormInput />
+      <FormInput onSubmit={calculateHandler} />
 
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
